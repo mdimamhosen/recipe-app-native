@@ -121,6 +121,7 @@ export const MealAPI = {
       ingredients,
       instructions,
       originalData: meal,
+      youtubeUrl: meal.strYoutube,
     };
   },
 };
