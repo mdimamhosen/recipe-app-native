@@ -33,9 +33,11 @@ const VerifyEmail = ({
       const signUpAttempt = await signUp.attemptEmailAddressVerification({
         code,
       });
+      console.log(signUpAttempt)
 
       if (signUpAttempt.status === "complete") {
         await setActive({ session: signUpAttempt.createdSessionId });
+        Alert.alert("Success", "Email verified successfully!");
       } else {
         Alert.alert("Error", "Verification failed. Please try again.");
         console.error(JSON.stringify(signUpAttempt, null, 2));
